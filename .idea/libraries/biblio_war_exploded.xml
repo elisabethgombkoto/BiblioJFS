@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="biblio_war_exploded">
+    <CLASSES />
+    <JAVADOC>
+      <root url="file://$USER_HOME$/glassfish-4.1.1/glassfish4/pkg/javadocs" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://$USER_HOME$/glassfish-4.1.1/glassfish4/glassfish/domains/domain1/generated/jsp/biblio_war_exploded" />
+    </SOURCES>
+  </library>
+</component>
