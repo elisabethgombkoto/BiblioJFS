@@ -24,9 +24,12 @@ public class CalcCntrlr {
 
   private Calculator calculator = new Calculator();
   @NotNull
-  @Min(value = 100)
+  @Min(value = 0)
   @Max(value = 100)
   private long firstNumber = 0;
+  @NotNull
+  @Min (value = 0)
+  @Max(value = 100)
   private long secondNumber = 0;
   private long result = 0;
 
@@ -43,11 +46,10 @@ public class CalcCntrlr {
   public long getResult (){
     return result;
   }
-
+  public long setResult (long result) { return this.result = result;}
   public void setSecondNumber (long aSecondNumber){
     this.secondNumber = aSecondNumber;
   }
-
   public long getSecondNumber(){
     return secondNumber;
   }
