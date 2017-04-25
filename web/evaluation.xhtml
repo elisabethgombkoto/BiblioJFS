@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+    <title> Bewertung </title>
+</head>
+<body>
+<h:form>
+
+    Name:
+    <h:inputText id = "name"
+                 value = "#{evaluationCntrlr.name}"
+                 validatorMessage="Please enter your name" >
+    </h:inputText>
+
+    <br>
+    </br>
+
+    Medientype:
+    <h:selectOneListbox id="medienType" value="#{evaluationCntrlr.medienType}" required="true">
+        <f:selectItem itemValue="book" itemLabel="Book" />
+        <f:selectItem itemValue="dvd" itemLabel="DVD" />
+    </h:selectOneListbox>
+
+    <br>
+    </br>
+
+    <h:selectOneListbox id="medienTitles"  value="#{evaluationCntrlr.medienTitle}" >
+        <f:selectItems value="${evaluationCntrlr.medienTitles}"  />
+    </h:selectOneListbox>
+
+    <br>
+    </br>
+
+    Altes empfehlung:
+    <h:selectManyCheckbox value="#{evaluationCntrlr.selectedAges}">
+        <f:selectItems value="#{evaluationCntrlr.availableAges}" />
+    </h:selectManyCheckbox>
+
+    <br>
+    </br>
+
+    Evaluation:
+    <h:selectOneRadio value="#{evaluationCntrlr.evaluation}">
+        <f:selectItem itemValue="a" itemLabel="ausgezeichnet"/>
+        <f:selectItem itemValue="b" itemLabel="gut"/>
+        <f:selectItem itemValue="c" itemLabel="befriedigend"/>
+        <f:selectItem itemValue="d" itemLabel="genügend"/>
+        <f:selectItem itemValue="e" itemLabel="ungenügend"/>
+    </h:selectOneRadio>
+    <h:inputTextarea
+            id = "comment"
+            value = "#{evaluationCntrlr.comment}">
+    </h:inputTextarea>
+
+    <h:commandButton action="#{evaluationCntrlr.add}" value="add"/>
+
+</h:form>
+</body>
+</html>
